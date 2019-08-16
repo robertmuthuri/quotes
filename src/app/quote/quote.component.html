@@ -5,13 +5,12 @@
 
 <ul>
 
-<!--  <div *ngFor="let myQuote of quotes"; let i = index>-->
+  <div *ngFor="let myQuote of quotes"; let i = index>
   
-  <li *ngFor="let myGoal of quotes">
-    {{ myGoal.name }}
-  </li>
+    <li> {{ myGoal.name }} </li>
   
-<!--    <button (click)="toggleDetails(i)">Toggle Details</button>-->
+    <button (click)="toggleDetails(i)">Toggle Details</button>
+    
 
 <!--  </div>-->
 </ul>
