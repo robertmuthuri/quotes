@@ -5,15 +5,15 @@
 
 <ul>
 
-  <div *ngFor="let myQuote of quotes"; let i = index>
+  <div *ngFor="let myQuote of quotes; let i = index">
   
-    <li> {{ myGoal.name }} </li>
-  
+    <li> {{ myQuote.name }} </li>
+    
+<!--    <button (click)="toggleDetails(i)">Toggle Details</button>-->
+
+<!--    <app-quote-detail [quote]="myQuote"></app-quote-detail>-->
     <app-quote-detail [quote]="myQuote"></app-quote-detail>
     
-    <button (click)="toggleDetails(i)">Toggle Details</button>
-    
-
-<!--  </div>-->
+  </div>
 </ul>
 
