@@ -6,13 +6,15 @@ import { AppComponent } from './app.component';
 import { QuoteComponent } from './quote/quote.component';
 import { QuoteDetailComponent } from './quote-detail/quote-detail.component';
 import { VotingComponent } from './voting/voting.component';
+import { BestquoteDirective } from './bestquote.directive';
 
 @NgModule({
   declarations: [
     AppComponent,
     QuoteComponent,
     QuoteDetailComponent,
-    VotingComponent
+    VotingComponent,
+    BestquoteDirective
   ],
   imports: [
     BrowserModule,
