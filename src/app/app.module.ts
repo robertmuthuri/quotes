@@ -7,6 +7,7 @@ import { QuoteComponent } from './quote/quote.component';
 import { QuoteDetailComponent } from './quote-detail/quote-detail.component';
 import { VotingComponent } from './voting/voting.component';
 import { BestquoteDirective } from './bestquote.directive';
+import { QuoteFormComponent } from './quote-form/quote-form.component';
 
 @NgModule({
   declarations: [
@@ -14,7 +15,8 @@ import { BestquoteDirective } from './bestquote.directive';
     QuoteComponent,
     QuoteDetailComponent,
     VotingComponent,
-    BestquoteDirective
+    BestquoteDirective,
+    QuoteFormComponent
   ],
   imports: [
     BrowserModule,
