@@ -1,24 +1,31 @@
 <!--<p>quote works!</p>-->
-<h1>Some of my favorite quotes</h1>
-
-<hr>
-
-<ul>
-
-  <div *ngFor="let myQuote of quotes; let i = index">
+<div class="container">
+  <h1>Some of my favorite quotes</h1>
+  <hr>
   
-    <li> {{ myQuote.name }} </li>
+  <div class="row">
+    <div class="col-md-6">
+      <div *ngFor="let myQuote of quotes; let i = index">
+      
+        <li> {{ myQuote.name }} </li>
+        
+        <button (click)="toggleDetails(i)">Toggle Details</button>
     
-    <button (click)="toggleDetails(i)">Toggle Details</button>
-
-    <app-quote-detail *ngIf="myQuote.showQuote" [quote]="myQuote" (isComplete)="deleteQuote($event, i)"></app-quote-detail>
-    <!--    <app-quote-detail [quote]="myQuote"></app-quote-detail>-->
-    
-    <app-voting [quote]="myQuote" *ngIf="myQuote.showQuote" (isUpVoted)="upvoteQuote($event, i)" (isDownVoted)="downvoteQuote($event, i)"></app-voting>
+        <app-quote-detail *ngIf="myQuote.showQuote" [quote]="myQuote" (isComplete)="deleteQuote($event, i)"></app-quote-detail>
+        <!--    <app-quote-detail [quote]="myQuote"></app-quote-detail>-->
+        
+        <app-voting [quote]="myQuote" *ngIf="myQuote.showQuote" (isUpVoted)="upvoteQuote($event, i)" (isDownVoted)="downvoteQuote($event, i)"></app-voting>
+      
+      </div>
+    </div>
+    <div class="col-md-6">
+      
+      <app-quote-form (addQuote)="addNewQuote($event)"></app-quote-form>
+    </div>
   
+    
+    <button appBestquote>What is the best quote?!</button>
+    
   </div>
-  
-  <button appBestquote>What is the best quote?!</button>
-  
-</ul>
+</div>
 
