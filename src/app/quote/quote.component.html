@@ -14,7 +14,8 @@
     <app-quote-detail *ngIf="myQuote.showQuote" [quote]="myQuote" (isComplete)="deleteQuote($event, i)"></app-quote-detail>
     <!--    <app-quote-detail [quote]="myQuote"></app-quote-detail>-->
     
-    
+    <app-voting [quote]="myQuote" *ngIf="myQuote.showQuote"></app-voting>
+  
   </div>
 </ul>
 

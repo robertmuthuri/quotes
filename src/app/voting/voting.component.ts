@@ -7,8 +7,8 @@ import { Quote } from '../quote';
   styleUrls: ['./voting.component.css']
 })
 export class VotingComponent implements OnInit {
-  @Input() quote: Quote;
 
+  @Input() quote: Quote;
 
   constructor() { }
 
