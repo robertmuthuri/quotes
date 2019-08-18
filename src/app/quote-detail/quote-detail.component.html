@@ -1,1 +1,3 @@
-<p> {{ quote.quoteText }} </p>
+<p> {{ quote.quoteText + ' - ' +  quote.quoteAuthor}} </p>
+<button (click)="quoteComplete(true)"></button>
+
