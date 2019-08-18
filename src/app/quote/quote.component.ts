@@ -52,9 +52,13 @@ export class QuoteComponent implements OnInit {
     this.quotes[index].showQuote = !this.quotes[index].showQuote;
   }
 
-  completeQuote(isComplete, index) {
+  deleteQuote(isComplete, index) {
     if (isComplete) {
+      let toDelete = confirm('Are you sure you want to delete this goal?');
+
+      if (toDelete) {
       this.quotes.splice(index, 1);
+      }
     }
   }
   constructor() { }
