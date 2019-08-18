@@ -1,5 +1,5 @@
 <!--<p>quote works!</p>-->
-<h1>Our Favourite Quotes</h1>
+<h1>Some of my favorite quotes</h1>
 
 <hr>
 
@@ -11,7 +11,7 @@
     
     <button (click)="toggleDetails(i)">Toggle Details</button>
 
-    <app-quote-detail *ngIf="myQuote.showQuote" [quote]="myQuote"></app-quote-detail>
+    <app-quote-detail *ngIf="myQuote.showQuote" [quote]="myQuote" (isComplete)="completeQuote($event, i)"></app-quote-detail>
     
 <!--    <app-quote-detail [quote]="myQuote"></app-quote-detail>-->
   </div>
