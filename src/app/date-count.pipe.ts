@@ -11,18 +11,18 @@ export class DateCountPipe implements PipeTransform {
 
     let todayWithNoTime: any = new Date(today.getFullYear(), today.getMonth(), today.getDate());
 
-    var dateDifference = Math.abs(value - todayWithNoTime);
+    var dateDifference = Math.abs(todayWithNoTime - value);
 
-    const secondsInDay = 86400 // 60 seconds * 60 minutes in an hour * 24 hours in a day
+    const secondsInDay = 86400; // 60 seconds * 60 minutes in an hour * 24 hours in a day
 
     var dateDifferenceSeconds = dateDifference * 0.001;
 
-    var dateCounter = dateDifferenceSeconds / secondsInDay;
+    var dateCounter = Math.floor(dateDifferenceSeconds / secondsInDay);
 
-    if (dateCounter >= 1 && value > todayWithNoTime) {
-      return dateCounter
+    if (dateCounter >= 1 && value < todayWithNoTime) {
+      return dateCounter;
     } else {
-      return null;
+      return 0;
     }
   }
 }

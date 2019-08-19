@@ -35,7 +35,7 @@ export class QuoteComponent implements OnInit {
       // tslint:disable-next-line:max-line-length
       'Art suffers the moment other people start paying for it. The more you need the money, the more people will tell you what to do. The less control you will have. The more bullshit you will have to swallow. The less joy it will bring. Know this and plan accordingly.\n' +
       '28. The best way to get approval is not to need it. \n' +
-      'This is equally true in art and business. And love. And sex. And just about everything else worth having\n', 'Hugh Macleod', 'RK', 0, 0, new Date(2012, 02, 12)),
+      'This is equally true in art and business. And love. And sex. And just about everything else worth having\n', 'Hugh Macleod', 'RK', 0, 0, new Date(2012, 2, 12)),
     // tslint:disable-next-line:max-line-length
 
     new Quote(8, 'The gift', 'Work is an intended activity that is accomplished through the will. A labor can be intended but only to the extent of doing the groundwork, or of not doing things that would clearly prevent the labor. Beyond that, labor has its own schedule\n' +
@@ -88,6 +88,7 @@ export class QuoteComponent implements OnInit {
   addNewQuote(quote) {
     let quoteLength = this.quotes.length;
     quote.id = quoteLength + 1;
+    quote.dateCreated = new Date();
     this.quotes.push(quote);
   }
   constructor() { }

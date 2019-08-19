@@ -25,7 +25,7 @@ export class BestquoteDirective {
     });
 
   };
-   alert('The best quote is: ');
+    alert('The best quote is: ');
 }
 
 }
