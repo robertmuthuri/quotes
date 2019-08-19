@@ -7,3 +7,6 @@
 .container {
   background-color: wheat;
 }
+.card-text {
+  font-style: italic;
+}
