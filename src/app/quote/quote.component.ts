@@ -10,7 +10,7 @@ export class QuoteComponent implements OnInit {
 
   quotes: Quote[] = [
     // tslint:disable-next-line:max-line-length
-    new Quote(1, 'The Man in the Arena Quote', 'It is not the critic who counts; not the man who points out how the strong man stumbles, or where the doer of deeds could have done them better. The credit belongs to the man who is actually in the arena, whose face is marred by dust and sweat and blood; who strives valiantly; who errs, who comes short again and again, because there is no effort without error and shortcoming; but who does actually strive to do the deeds; who knows great enthusiasms, the great devotions; who spends himself in a worthy cause; who at the best knows in the end the triumph of high achievement, and who at the worst, if he fails, at least fails while daring greatly, so that his place shall never be with those cold and timid souls who neither know victory nor defeat', 'Theodore Roosevelt', 'RK', 0, 0, new Date(1910, 4, 23)),
+    new Quote(1, 'The Man in the Arena', 'It is not the critic who counts; not the man who points out how the strong man stumbles, or where the doer of deeds could have done them better. The credit belongs to the man who is actually in the arena, whose face is marred by dust and sweat and blood; who strives valiantly; who errs, who comes short again and again, because there is no effort without error and shortcoming; but who does actually strive to do the deeds; who knows great enthusiasms, the great devotions; who spends himself in a worthy cause; who at the best knows in the end the triumph of high achievement, and who at the worst, if he fails, at least fails while daring greatly, so that his place shall never be with those cold and timid souls who neither know victory nor defeat', 'Theodore Roosevelt', 'RK', 0, 0, new Date(1910, 4, 23)),
 
     new Quote(2, 'Creativity', 'To invent… is to choose', 'Henri Poincaré', 'Robert Frost', 0, 0, new Date(2016, 3, 6)),
 
@@ -41,7 +41,7 @@ export class QuoteComponent implements OnInit {
     new Quote(8, 'The gift', 'Work is an intended activity that is accomplished through the will. A labor can be intended but only to the extent of doing the groundwork, or of not doing things that would clearly prevent the labor. Beyond that, labor has its own schedule\n' +
       '…\n' +
       // tslint:disable-next-line:max-line-length
-      'There is no technology, no time-saving device that can alter the rhythms of creative labor. When the worth of labor is expressed in terms of exchange value, therefore, creativity is automatically devalued every time there is an advance in the technology of work\n', ': Lewis Hyde', 'RK', 0, 0, new Date(2011, 9, 12)),
+      'There is no technology, no time-saving device that can alter the rhythms of creative labor. When the worth of labor is expressed in terms of exchange value, therefore, creativity is automatically devalued every time there is an advance in the technology of work\n', ': Lewis Hyde', 'RK', 6, 0, new Date(2011, 9, 12)),
     // tslint:disable-next-line:max-line-length
 
     new Quote(9, 'Flow', 'A kind of intense focus and crisp sense of clarity where you forget yourself, lose track of time, and feel like you’re part of something larger. If you’ve ever pulled an all-nighter for a pet project, or even spent 20 consecutive hours composing a love letter, you’ve experienced flow and you know creative labor', 'Mihaly Csikszentmihalyi', 'RK', 0, 0, new Date(2008, 7, 1)),
@@ -65,7 +65,7 @@ export class QuoteComponent implements OnInit {
 
   deleteQuote(isComplete, index) {
     if (isComplete) {
-      let toDelete = confirm('Are you sure you want to delete this goal?');
+      const toDelete = confirm('Are you sure you want to delete this goal?');
 
       if (toDelete) {
       this.quotes.splice(index, 1);
@@ -86,11 +86,33 @@ export class QuoteComponent implements OnInit {
   }
 
   addNewQuote(quote) {
-    let quoteLength = this.quotes.length;
+    const quoteLength = this.quotes.length;
     quote.id = quoteLength + 1;
     quote.dateCreated = new Date();
     this.quotes.push(quote);
   }
+
+  get sortQuotes() {
+    return this.quotes.sort((a, b) => {
+      return (b.quoteUpVote) as any  - (a.quoteUpVote) as any;
+    });
+      // const sortedQuotes = sortQuotes(this.quotes);
+  }
+
+
+// sortByUpVotes = (quotes: Quote[]) => {
+//
+//     quotes.sort((quoteA, quoteB) => {
+//       if (quoteA.quoteUpVote > quoteB.quoteUpVote) { return 1; }
+//       if (quoteA.quoteUpVote < quoteB.quoteUpVote) { return 0; }
+//       return 0;
+//
+//       const sortedByUpvotes = sortByUpvotes(this.quotes);
+//     });
+//
+//   };
+
+
   constructor() { }
 
   ngOnInit() {
