@@ -13,7 +13,8 @@ export class BestquoteDirective {
 
 @HostListener('click') onClicks() {
     console.log(this.quotes[1]);
-   const sortByUpvotes = (quotes: Quote[]) => {
+
+    const sortByUpvotes = (quotes: Quote[]) => {
 
     quotes.sort((quoteA, quoteB) => {
        if (quoteA.quoteUpVote > quoteB.quoteUpVote) { return 1; }
